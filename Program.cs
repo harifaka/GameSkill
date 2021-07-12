@@ -25,7 +25,9 @@ namespace GameSkills
 
             //Console.WriteLine(parameters.getFilePath());
             //content = new ParameterHelper("lolkepessegek.csv");
-            content = new ParameterHelper("latinkifejezesek.csv");
+            //content = new ParameterHelper("latinkifejezesek.csv");
+            string databaseName = GetParameterValue("fileInput");
+            content = new ParameterHelper(databaseName);
             champs = content.getFileLines();
             //Console.WriteLine(content.GenerateInfo());
 
@@ -57,6 +59,20 @@ namespace GameSkills
             //System.Threading.Thread.Sleep(1000);
             Console.WriteLine("Press any key to exit!");
             Console.ReadKey();
+        }
+
+        static string GetParameterValue(string parameterName)
+        {
+            foreach (var item in infos)
+            {
+                if (item.Contains(parameterName))
+                {
+                    var temp = item.Split(":");
+                    var value = temp[1];
+                    return value;
+                }
+            }
+            return "";
         }
         
         static void DoQuestion(){
