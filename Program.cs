@@ -15,8 +15,8 @@ namespace GameSkills
         private static int goodAnswer;
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello League of Legends champion ability questioner!");
-            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("Hello - This is a questioner game, what ask based on the database !");
+            System.Threading.Thread.Sleep(500);
             goodAnswer = 0;
             
             parameters = new ParameterHelper(".config");
@@ -24,7 +24,8 @@ namespace GameSkills
             //Console.WriteLine(parameters.GenerateInfo());
 
             //Console.WriteLine(parameters.getFilePath());
-            content = new ParameterHelper("lolkepessegek.csv");
+            //content = new ParameterHelper("lolkepessegek.csv");
+            content = new ParameterHelper("latinkifejezesek.csv");
             champs = content.getFileLines();
             //Console.WriteLine(content.GenerateInfo());
 
