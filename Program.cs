@@ -43,7 +43,7 @@ namespace GameSkills
                 Console.Clear();
                 Console.WriteLine("-------"+"The "+(i+1)+"/"+questionNum + " question is:"+"-------");
                 DoQuestion();
-                System.Threading.Thread.Sleep(1500);
+                System.Threading.Thread.Sleep(500);
             }
 
             string result = Environment.NewLine;
